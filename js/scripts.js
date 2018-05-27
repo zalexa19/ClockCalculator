@@ -104,9 +104,26 @@ function validate_minutes(element){
 }
 
 function enhance_number(element){
-    var number = element;
-    if (number.value < 10 && number.value >0){
-        number.value = '0'+number.value;
+    var number = Number(element.value);
+
+
+    console.log(number);
+
+
+
+
+    if (number < 10) {
+
+        var num=number/10;
+        console.log(num);
+
+
+        if (parseInt(num)==0){
+
+            element.value = '0'+number;
+        }
+
+
     }
 
 }
