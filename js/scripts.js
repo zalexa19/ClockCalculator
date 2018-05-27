@@ -71,3 +71,42 @@ function convert_ms_to_hr(msTime){
       //console.log("result: "+ result + " \nHours: " + extractedHour + " \nMinutes: " + extractedMinutes);
       return result;
 }
+
+function validateHours(){
+
+}
+
+function validateHours(element){
+    var hour = element.value //document.getElementById("fromHour");
+
+
+
+    if (element.value>=24){
+        element.value="23";
+    }
+
+    if (element.value<0){
+        element.value="0";
+    }
+
+
+}
+
+
+function validate_minutes(element){
+    if (element.value <0){
+        element.value=0;
+    }
+
+    if (element.value > 59){
+        element.value=59;
+    }
+}
+
+function enhance_number(element){
+    var number = element;
+    if (number.value < 10 && number.value >0){
+        number.value = '0'+number.value;
+    }
+
+}
