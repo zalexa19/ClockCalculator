@@ -15,6 +15,7 @@ var todayDD = currentDate.getDate();
 var todayMM = currentDate.getMonth();
 var todayYYYY= currentDate.getFullYear();
 var todaysDateString = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+document.getElementById("error").style.visibility="hidden";
 
 
 var fromHH, fromMM,toHH,toMM, fromDate, toDate;
@@ -31,24 +32,49 @@ function submitButton() {
     fromDate = new Date (document.getElementById("fromDate").value);
     toDate = new Date (document.getElementById("toDate").value);
 
-    //creates a simple date object
-    var from = new Date (fromDate.getFullYear(),fromDate.getMonth(),fromDate.getDate(),fromHH.value,fromMM.value);
-    var to =  new Date (toDate.getFullYear(),toDate.getMonth(),toDate.getDate(),toHH.value,toMM.value);
+
+    if (validate_fields(fromHH,fromMM,fromDate,toHH,toMM,toDate) == 0) {
 
 
-    //calculate date difference
-    dates_differences(from,to);
+        //creates a simple date object
+        var from = new Date(fromDate.getFullYear(), fromDate.getMonth(), fromDate.getDate(), fromHH.value, fromMM.value);
+        var to = new Date(toDate.getFullYear(), toDate.getMonth(), toDate.getDate(), toHH.value, toMM.value);
 
-    //print result
-    var resultString = resultString = extractedHour+ " hours" +", "+extractedMinutes+" Minutes";
 
-    if (extractedDays >= 1){
-        resultString = extractedDays + " Days, "+resultString;
+        //calculate date difference
+        dates_differences(from, to);
+
+        //print result
+        var resultString = resultString = extractedHour + " hours" + ", " + extractedMinutes + " Minutes";
+
+        if (extractedDays >= 1) {
+            resultString = extractedDays + " Days, " + resultString;
+        }
+
+        document.getElementById("result").value = resultString;
+    }
+}
+
+
+
+function validate_fields(fromHH, fromMM, fromDate, toHH, toMM, toDate){
+    var errorFlag=0;
+
+    if (fromHH == null || fromHH =="" ){
+        errorFlag=1;
+
+        document.getElementById("error").style.visibility="visible";
+        document.getElementById("error").innerHTML="Fields are required";
+
     }
 
-    document.getElementById("result").value= resultString;
-
+    return errorFlag;
 }
+
+
+
+
+
 
 
 

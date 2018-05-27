@@ -20,6 +20,10 @@
             <p class="lead">This calculator calculates hours</p>
 
             <form name="timesForm" >
+                <div id="error" class="alert alert-danger" role="alert">
+
+                </div>
+
                 <div class="form-row">
                     <div class="col">
                         <input id="fromHour" type="number" class="form-control" placeholder="HH" onkeyup="validateHours(this)" onblur="enhance_number(this)" maxlength="2">
