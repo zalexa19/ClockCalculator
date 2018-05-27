@@ -6,55 +6,60 @@
         <title>Clock Calculator</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
         <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
         <!--link rel="stylesheet" href="css/Styles.css"-->
         <!--link rel="stylesheet" href="css/media.css"-->
 
     </head>
 
-    <body onload="default_date()">
+    <body class="bg-info text-light" onload="default_values()">
 
 
-        <div class="container text-center">
-            <h1 class="display-1">Clock Calculator</h1>
-            <p class="lead">This calculator calculates hours</p>
+        <div class=" container text-center">
+            <h1 class="display-3 mt-5" >Time Calculator</h1>
+            <p class="lead mb-3">This calculator calculates hours</p>
 
-            <form name="timesForm" >
+            <hr class="mb-4">
+            <form name="timesForm jumbotron"   >
                 <div id="error" class="alert alert-danger" role="alert">
-
                 </div>
 
-                <div class="form-row">
+                <div class="form-row form-group" >
+                    <label class="col-lg-12">Start:</label>
                     <div class="col">
-                        <input id="fromHour" type="number" class="form-control" placeholder="HH" onkeyup="validateHours(this)" onblur="enhance_number(this)" maxlength="2">
+                        <input id="fromHour" type="number" class="form-control no-spinners" placeholder="HH" onkeyup="validateHours(this)" onblur="enhance_number(this)" maxlength="2">
                     </div>
                     <p>:</p>
                     <div class="col">
-                        <input id="fromMinute" type="number" class="form-control" placeholder="mm" onkeyup="validate_minutes(this)" onblur="enhance_number(this)" maxlength="2">
+                        <input id="fromMinute" type="number" class="form-control no-spinners" placeholder="mm" onkeyup="validate_minutes(this)" onblur="enhance_number(this)" maxlength="2">
                     </div>
                     <div class="col">
-                        <input id="fromDate"type="date" class="form-control" placeholder="Date">
+                        <input id="fromDate"type="date" class="form-control no-spinners" placeholder="Date">
                     </div>
                 </div>
 
 
                 <div class="form-row">
+                    <label class="col-lg-12">End:</label>
                     <div class="col">
-                        <input id="toHour" type="number" class="form-control" placeholder="HH" onkeyup="validateHours(this)"  onblur="enhance_number(this)" maxlength="2">
+                        <input id="toHour" type="number" class="form-control no-spinners" placeholder="HH" onkeyup="validateHours(this)"  onblur="enhance_number(this)" maxlength="2">
                     </div>
                     <p>:</p>
                     <div class="col">
-                        <input id="toMinute" type="number" class="form-control" placeholder="mm" onkeyup="validate_minutes(this)" onblur="enhance_number(this)" maxlength="2">
+                        <input id="toMinute" type="number" class="form-control no-spinners" placeholder="mm" onkeyup="validate_minutes(this)" onblur="enhance_number(this)" maxlength="2">
                     </div>
                     <div class="col">
-                        <input id="toDate" type="date" class="form-control" placeholder="Date">
+                        <input id="toDate" type="date" class="form-control no-spinners" placeholder="Date">
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-primary" onclick="submitButton()">Submit</button>
+
+                <button type="button" class="btn btn-dark my-3" onclick="submitButton()">Submit</button>
 
                 <h2 class="h2">Result:</h2>
                 <input id="result" class="form-control" type="text" placeholder="Result" readonly>
+
 
             </form>
 

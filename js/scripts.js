@@ -102,9 +102,11 @@ function convert_ms_to_hr(msTime){
 }
 
 
-function default_date () {
-
+function default_values () {
+    var currentHH = currentDate.getHours();
+    var currentMM = currentDate.getMinutes();
     var todaysDate;
+
 
     if (todayDD <10){
     todayMM="0"+todayMM;
@@ -115,23 +117,26 @@ function default_date () {
     document.getElementById("fromDate").value=todaysDate;
     document.getElementById("toDate").value=todaysDate;
 
+    document.getElementById("fromHour").value=currentHH;
+    document.getElementById("toHour").value=currentHH;
+    document.getElementById("fromMinute").value=currentMM;
+    document.getElementById("toMinute").value=currentMM;
+
 }
 
 
 
 function validateHours(element){
     var hour = element.value //document.getElementById("fromHour");
+    console.log(element.value);
 
+        if (element.value > _MAX_HOUR) {
+            element.value = _MAX_HOUR;
+        }
 
-
-    if (element.value>_MAX_HOUR){
-        element.value=_MAX_HOUR;
-    }
-
-    if (element.value<0){
-        element.value="0";
-    }
-
+        if (element.value < 0) {
+            element.value = "0";
+        }
 
 }
 
