@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119951036-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-119951036-1');
+        </script>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Clock Calculator</title>
@@ -21,11 +31,11 @@
             <p class="lead mb-3">This calculator calculates hours</p>
 
             <hr class="mb-4">
-            <form name="timesForm jumbotron"   >
-                <div id="error" class="alert alert-danger" role="alert">
-                </div>
+            <form name="timesForm jumbotron "    >
+<!--                <div id="error" class="alert alert-danger" role="alert">
+                </div>-->
 
-                <div class="form-row form-group" >
+                <div class="form-row form-group " >
                     <label class="col-lg-12">Start:</label>
                     <div class="col">
                         <input id="fromHour" type="number" class="form-control no-spinners" placeholder="HH" onkeyup="validateHours(this)" onblur="enhance_number(this)" maxlength="2">
