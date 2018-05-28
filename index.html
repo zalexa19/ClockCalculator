@@ -49,14 +49,14 @@
                 <div class="form-row form-group " >
                     <label class="col-lg-12">Start:</label>
                     <div class="col">
-                        <input id="fromHour" type="number" class="form-control no-spinners" placeholder="HH" onkeyup="validateHours(this)" onblur="enhance_number(this)" maxlength="2">
+                        <input id="fromHour" type="number" class="form-control no-spinners" placeholder="HH" onClick="this.select()" onkeyup="validateHours(this)" onblur="enhance_number(this)" maxlength="2">
                     </div>
                     <p>:</p>
                     <div class="col">
-                        <input id="fromMinute" type="number" class="form-control no-spinners" placeholder="mm" onkeyup="validate_minutes(this)" onblur="enhance_number(this)" maxlength="2">
+                        <input id="fromMinute" type="number" class="form-control no-spinners" placeholder="mm" onClick="this.select()" onkeyup="validate_minutes(this)" onblur="enhance_number(this)" maxlength="2">
                     </div>
                     <div class="col">
-                        <input id="fromDate"type="date" class="form-control no-spinners" placeholder="Date">
+                        <input id="fromDate"type="date" class="form-control no-spinners" onClick="this.select()" placeholder="Date">
                     </div>
                 </div>
 
@@ -64,14 +64,14 @@
                 <div class="form-row">
                     <label class="col-lg-12">End:</label>
                     <div class="col">
-                        <input id="toHour" type="number" class="form-control no-spinners" placeholder="HH" onkeyup="validateHours(this)"  onblur="enhance_number(this)" maxlength="2">
+                        <input id="toHour" type="number" class="form-control no-spinners" placeholder="HH" onkeyup="validateHours(this)"  onblur="enhance_number(this)" onClick="this.select()" maxlength="2">
                     </div>
                     <p>:</p>
                     <div class="col">
-                        <input id="toMinute" type="number" class="form-control no-spinners" placeholder="mm" onkeyup="validate_minutes(this)" onblur="enhance_number(this)" maxlength="2">
+                        <input id="toMinute" type="number" class="form-control no-spinners" placeholder="mm" onkeyup="validate_minutes(this)" onblur="enhance_number(this)" onClick="this.select()" maxlength="2">
                     </div>
                     <div class="col">
-                        <input id="toDate" type="date" class="form-control no-spinners" placeholder="Date">
+                        <input id="toDate" type="date" class="form-control no-spinners" placeholder="Date" onClick="this.select()">
                     </div>
                 </div>
 
