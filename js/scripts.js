@@ -142,7 +142,6 @@ function validateHours(element){
 
 
 
-
 /*
     if the number inserted is invalid, it's change to the max minutes or min minutes
     If the minutes are <10, 0 is added. unless 0 already exists

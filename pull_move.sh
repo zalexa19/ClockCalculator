@@ -1,4 +1,4 @@
 git pull
-mv ClockCalculator/* /html/
+mv -v ClockCalculator/* /html/
 
 
