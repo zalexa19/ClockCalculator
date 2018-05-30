@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script> (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3293786720106442",
+            enable_page_level_ads: true
+        });
+        </script>
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -8,7 +14,6 @@
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-NFBLQBB');</script>
         <!-- End Google Tag Manager -->
-
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119873569-1"></script>
         <script>
@@ -26,17 +31,9 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
-
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({
-                google_ad_client: "ca-pub-3293786720106442",
-                enable_page_level_ads: true
-            });
-        </script>
     </head>
 
-    <body class="bg-info text-light" onload="default_values()">
+    <body class="bg-info text-light mx-md-5" onload="default_values()">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFBLQBB"
                       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -44,51 +41,79 @@
 
         <div class=" container text-center">
             <h1 class="display-3 mt-5" >Time Calculator</h1>
-            <p class="lead mb-3">This calculator calculates hours</p>
+            <p class="lead mb-3">Calculate duration between two given times</p>
 
             <hr class="mb-4">
             <form name="timesForm jumbotron "    >
 <!--                <div id="error" class="alert alert-danger" role="alert">
                 </div>-->
 
-                <div class="form-row form-group " >
-                    <label class="col-lg-12">Start:</label>
+                <div class="form-row form-group justify-content-md-center" >
+<!--
+                   // <label class="col-lg-1">Start:</label>
+-->
                     <div class="col">
-                        <input id="fromHour" type="number" class="form-control no-spinners" placeholder="HH" onClick="this.select()" onkeyup="validateHours(this)" onblur="enhance_number(this)" maxlength="2">
+                        <input id="fromHour" type="number" class="form-control no-spinners col-sm-4" placeholder="HH" onClick="this.select()" onkeyup="validateHours(this)" onblur="enhance_number(this)" maxlength="2">
                     </div>
                     <p>:</p>
                     <div class="col">
-                        <input id="fromMinute" type="number" class="form-control no-spinners" placeholder="mm" onClick="this.select()" onkeyup="validate_minutes(this)" onblur="enhance_number(this)" maxlength="2">
+                        <input id="fromMinute" type="number" class="form-control no-spinners col-sm-4" placeholder="mm" onClick="this.select()" onkeyup="validate_minutes(this)" onblur="enhance_number(this)" maxlength="2">
                     </div>
                     <div class="col">
-                        <input id="fromDate"type="date" class="form-control no-spinners" onClick="this.select()" placeholder="Date">
+                        <input id="fromDate"type="date" class="form-control no-spinners col-auto" onClick="this.select()" placeholder="Date">
                     </div>
                 </div>
 
 
-                <div class="form-row">
+                <div class="form-row no-gutters">
+<!--
                     <label class="col-lg-12">End:</label>
-                    <div class="col">
-                        <input id="toHour" type="number" class="form-control no-spinners" placeholder="HH" onkeyup="validateHours(this)"  onblur="enhance_number(this)" onClick="this.select()" maxlength="2">
+-->
+                    <div class="col ">
+                        <input id="toHour" type="number" class="form-control no-spinners col-sm-4" placeholder="HH" onkeyup="validateHours(this)"  onblur="enhance_number(this)" onClick="this.select()" maxlength="2">
                     </div>
                     <p>:</p>
                     <div class="col">
-                        <input id="toMinute" type="number" class="form-control no-spinners" placeholder="mm" onkeyup="validate_minutes(this)" onblur="enhance_number(this)" onClick="this.select()" maxlength="2">
+                        <input id="toMinute" type="number" class="form-control no-spinners col-sm-4" placeholder="mm" onkeyup="validate_minutes(this)" onblur="enhance_number(this)" onClick="this.select()" maxlength="2">
                     </div>
                     <div class="col">
                         <input id="toDate" type="date" class="form-control no-spinners" placeholder="Date" onClick="this.select()">
                     </div>
                 </div>
 
-
-                <button type="button" class="btn btn-dark my-3" onclick="submitButton()">Submit</button>
+                <button type="button" class="btn btn-dark my-3" onclick="submitButton()">Calculate</button>
 
                 <h2 class="h2">Result:</h2>
                 <input id="result" class="form-control" type="text" placeholder="Result" readonly>
 
-
             </form>
 
+
+            <div class="text-left">
+                <h2 class="text-capitalize font-weight-bold">About the time calculator</h2>
+                <p>This calculator allows you to calculate how many days, hours and minutes there are between two dates. </p>
+                <h3 class="text-capitalize font-weight-bold">Instructions</h3>
+                <p>Automatically, the duration calculator is populated with today's date and current hour.<br/></p>
+                <ol>
+                    <li>Choose the starting time</li>
+                    <li>Choose the starting date (optional)</li>
+                    <li>Choose the ending time</li>
+                    <li>Choose the ending date</li>
+                    <li>Press 'Calculate'</li>
+                </ol>
+
+
+                <h3 class="text-capitalize font-weight-bold">Uses of time duration calculator</h3>
+                <p>Time calculators have a lot of different and interesting uses</p>
+                <ul>
+                    <li>intermittent fasting - calculate how many hours passed since the last meal</li>
+                    <li>Calculate how many days you have been on a new diet</li>
+                    <li>Calculate how many hours you slept</li>
+                    <li>Calculate how many hours you worked on a project</li>
+                    <li>Calculate how many days are left until a specific date</li>
+                    <p> And many many more!</p>
+                </ul>
+            </div>
 
 
 
